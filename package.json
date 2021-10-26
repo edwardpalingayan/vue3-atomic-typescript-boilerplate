@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "test": "yarn test:unit",
+    "precommit": "yarn lint && yarn test:unit",
     "lint": "vue-cli-service lint",
     "storybook": "start-storybook -p 6016",
     "build-storybook": "build-storybook",
