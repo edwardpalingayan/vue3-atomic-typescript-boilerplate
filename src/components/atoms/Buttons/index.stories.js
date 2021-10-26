@@ -24,10 +24,14 @@ export default {
       control: { type: "boolean" },
       defaultValue: false,
     },
+    outlined: {
+      control: { type: "boolean" },
+      defaultValue: false,
+    },
     size: {
       control: { type: "select" },
-      options: ["sx", "sm", "md", "lg", "xl"],
-      defaultValue: "md",
+      options: ["xs", "sm", "base", "lg", "xl"],
+      defaultValue: "base",
     },
     variant: {
       control: { type: "select" },

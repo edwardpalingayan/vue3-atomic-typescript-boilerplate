@@ -18,6 +18,7 @@ interface AtomButtonProps {
   block?: boolean;
   disabled?: boolean;
   elevated?: boolean;
+  outlined?: boolean;
   label: string;
   round?: boolean;
   size?: Size;
@@ -29,15 +30,16 @@ const props = withDefaults(defineProps<AtomButtonProps>(), {
   block: false,
   disabled: false,
   elevated: false,
+  outlined: false,
   label: "Button",
   round: true,
-  size: "md",
+  size: "base",
   type: "button",
   variant: "default",
 });
 
 const defaultClassNames = computed(
-  () => `bg-${variantColor.value}-300 text-white font-bold py-2 px-4`
+  () => `text-${props.size} text-white font-bold py-2 px-4`
 );
 const variantColor = computed(() => useStyleVariants(props.variant));
 const classNames = computed(() => ({
@@ -46,6 +48,9 @@ const classNames = computed(() => ({
   [`hover:bg-${variantColor.value}-500 hover:text-white`]: !props.disabled,
   "shadow-lg": props.elevated,
   rounded: props.round,
+  [`bg-${variantColor.value}-300`]: !props.outlined,
+  [`bg-transparent hover:bg-${variantColor.value}-300 text-${variantColor.value}-500 font-semibold hover:text-white border border-${variantColor.value}-300 hover:border-transparent`]:
+    props.outlined,
 }));
 const emit = defineEmits(["click"]);
 const handleClick = () => emit("click");

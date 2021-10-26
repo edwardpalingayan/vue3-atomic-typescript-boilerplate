@@ -5,7 +5,9 @@
   </div>
   <router-view />
 </template>
-
+<script setup lang="ts">
+import AtomButton from "@/components/atoms/Buttons/index.vue";
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
