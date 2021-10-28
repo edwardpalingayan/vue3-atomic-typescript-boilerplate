@@ -16,10 +16,6 @@ export default {
       control: { type: "boolean" },
       defaultValue: false,
     },
-    round: {
-      control: { type: "boolean" },
-      defaultValue: true,
-    },
     elevated: {
       control: { type: "boolean" },
       defaultValue: false,
@@ -32,6 +28,11 @@ export default {
       control: { type: "select" },
       options: ["xs", "sm", "base", "lg", "xl"],
       defaultValue: "base",
+    },
+    shape: {
+      control: { type: "select" },
+      options: ["circle", "rounded", "pill"],
+      defaultValue: undefined,
     },
     variant: {
       control: { type: "select" },

@@ -11,7 +11,7 @@
 <script setup lang="ts">
 /* eslint-disable no-unused-vars */
 import { defineProps, withDefaults, computed, defineEmits } from "vue";
-import { ButtonType, Size, Variant } from "@/types/ui";
+import { ButtonType, ButtonShape, Size, Variant } from "@/types/ui";
 import { useStyleVariants } from "@/utils/useStyleVariants";
 
 interface AtomButtonProps {
@@ -20,7 +20,7 @@ interface AtomButtonProps {
   elevated?: boolean;
   outlined?: boolean;
   label: string;
-  round?: boolean;
+  shape?: ButtonShape;
   size?: Size;
   type?: ButtonType;
   variant?: Variant;
@@ -32,7 +32,6 @@ const props = withDefaults(defineProps<AtomButtonProps>(), {
   elevated: false,
   outlined: false,
   label: "Button",
-  round: true,
   size: "base",
   type: "button",
   variant: "default",
@@ -47,7 +46,10 @@ const classNames = computed(() => ({
   "opacity-50 cursor-not-allowed": props.disabled,
   [`hover:bg-${variantColor.value}-500 hover:text-white`]: !props.disabled,
   "shadow-lg": props.elevated,
-  rounded: props.round,
+  rounded: props.shape === "rounded",
+  "rounded-full": props.shape === "pill",
+  "rounded-full flex items-center h-16 w-16 justify-center":
+    props.shape === "circle",
   [`bg-${variantColor.value}-300`]: !props.outlined,
   [`bg-transparent hover:bg-${variantColor.value}-300 text-${variantColor.value}-500 font-semibold hover:text-white border border-${variantColor.value}-300 hover:border-transparent`]:
     props.outlined,
