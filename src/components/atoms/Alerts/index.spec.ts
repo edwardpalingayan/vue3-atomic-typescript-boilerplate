@@ -3,8 +3,8 @@ import Alerts from "@/components/atoms/Alerts/index.vue";
 
 describe("Atom -> Alert", () => {
   it("renders props.label when passed", () => {
-    const title = "Informational message";
-    const contents = "Some additional text to explain said message.";
+    const title = "Title area";
+    const contents = "Contents area";
     const variant = "success";
     const wrapper = shallowMount(Alerts, {
       props: { title, contents, variant },
