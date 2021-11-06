@@ -7,6 +7,14 @@
   </span>
 </template>
 
+<script lang="ts">
+export default {
+  name: "AtomBadge",
+  inheritAttrs: false,
+  customOptions: {},
+};
+</script>
+
 <script setup lang="ts">
 import { defineProps, withDefaults, computed } from "vue";
 import { Variant } from "@/types/ui";

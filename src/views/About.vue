@@ -6,5 +6,5 @@
 </template>
 
 <script setup lang="ts">
-import AtomButton from "@/components/atoms/Buttons/index.vue";
+import AtomButton from "@/components/atoms/Button/index.vue";
 </script>

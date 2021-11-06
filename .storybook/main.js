@@ -5,11 +5,11 @@ module.exports = {
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/addon-actions'],
   webpackFinal: async (config) => {
-    config.module.rules.push({
-      test: /\.ts$/,
-      loader: 'ts-loader',
-      options: { appendTsSuffixTo: [/\.vue$/] },
-    });
+    // config.module.rules.push({
+    //   test: /\.ts$/,
+    //   loader: 'ts-loader',
+    //   options: { appendTsSuffixTo: [/\.vue$/] },
+    // });
     config.resolve.plugins = config.resolve.plugins || [];
     config.resolve.plugins.push(new TsconfigPathsPlugin({
       configFile: path.resolve(__dirname, '../tsconfig.json')
