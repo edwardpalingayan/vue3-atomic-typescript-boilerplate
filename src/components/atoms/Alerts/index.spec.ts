@@ -2,7 +2,7 @@ import { shallowMount } from "@vue/test-utils";
 import Alerts from "@/components/atoms/Alerts/index.vue";
 
 describe("Atom -> Alert", () => {
-  it("renders props.label when passed", () => {
+  it("renders props [title, contents, variant] when passed", () => {
     const title = "Title area";
     const contents = "Contents area";
     const variant = "success";
